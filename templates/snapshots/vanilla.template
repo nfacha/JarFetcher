@@ -5,9 +5,9 @@ important=true
 ## See the default craftbukkit.jar.conf for a detailed documentation of the
 ## format of this file.
 [config]
-name = Vanilla [VERSION]
-source = http://jar.freemcserver.net/jar/vanilla/spigot-[VERSION].jar
-configSource = http://jar.freemcserver.net/conf/vanilla/spigot-[VERSION].jar.conf
+name = Vanilla SNAPSHOT [VERSION]
+source = http://jar.freemcserver.net/jar/snapshot/vanilla/spigot-[VERSION].jar
+configSource = http://jar.freemcserver.net/conf/snapshot/vanilla/spigot-[VERSION].jar.conf
 category = Mods
 
 [encoding]

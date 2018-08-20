@@ -5,9 +5,9 @@ important=true
 ## See the default craftbukkit.jar.conf for a detailed documentation of the
 ## format of this file.
 [config]
-name = CraftBukkit [VERSION]
-source = http://jar.freemcserver.net/jar/craftbukkit/craftbukkit-[VERSION].jar
-configSource = http://jar.freemcserver.net/conf/craftbukkit/craftbukkit-[VERSION].jar.conf
+name = CraftBukkit SNAPSHOT [VERSION]
+source = http://jar.freemcserver.net/jar/snapshot/craftbukkit/craftbukkit-[VERSION].jar
+configSource = http://jar.freemcserver.net/conf/snapshot/craftbukkit/craftbukkit-[VERSION].jar.conf
 category = Mods
 
 [encoding]
