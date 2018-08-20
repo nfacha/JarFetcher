@@ -13,7 +13,7 @@ for path in folders:
         if type == "spigot":
             with open('templates/spigot.template', 'r') as file:
                 template = file.read()
-        if type == "spigot":
+        if type == "vanilla":
             with open('templates/vanilla.template', 'r') as file:
                 template = file.read()
         template = template.replace("[VERSION]", version)

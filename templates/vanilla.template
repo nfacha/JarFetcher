@@ -6,8 +6,8 @@ important=true
 ## format of this file.
 [config]
 name = Vanilla [VERSION]
-source = http://jar.freemcserver.net/jar/spigot-[VERSION].jar
-configSource = http://jar.freemcserver.net/conf/spigot-[VERSION].jar.conf
+source = http://jar.freemcserver.net/jar/vanilla/spigot-[VERSION].jar
+configSource = http://jar.freemcserver.net/conf/vanilla/spigot-[VERSION].jar.conf
 category = Mods
 
 [encoding]
