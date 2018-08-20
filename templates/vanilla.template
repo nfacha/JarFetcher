@@ -1,0 +1,19 @@
+[parse_startup]
+start=\s*Done
+important=true
+
+## See the default craftbukkit.jar.conf for a detailed documentation of the
+## format of this file.
+[config]
+name = Vanilla [VERSION]
+source = http://jar.freemcserver.net/jar/spigot-[VERSION].jar
+configSource = http://jar.freemcserver.net/conf/spigot-[VERSION].jar.conf
+category = Mods
+
+[encoding]
+#encode = system
+#decode = system
+#fileEncoding = latin-1
+
+[start]
+command = "{JAVA}" -Xmx{MAX_MEMORY}M -Xms{START_MEMORY}M -XX:MaxPermSize=128M -Djline.terminal=jline.UnsupportedTerminal -Dcom.mojang.eula.agree=true -jar "{JAR}" nogui

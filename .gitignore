@@ -2,3 +2,6 @@
 \.idea/
 
 import\.sql
+
+*.jar
+*.jar.conf

@@ -1,23 +1,22 @@
 import os
-craftbukkit_template = ''
-for filename in os.listdir("downloads/jars/craftbukkit"):
-    data = filename.split("-")
-    type = data[0]
-    version = data[1].replace(".jar", "")
-    with open('craftbukkit.template', 'r') as file:
-        craftbukkit_template = file.read()
-    craftbukkit_template = craftbukkit_template.replace("[VERSION]", version)
-    with open('downloads/confs/craftbukkit/craftbukkit-%s.jar.conf' % version, 'a') as the_file:
-        the_file.write(craftbukkit_template)
-    print("Saved conf file for craftbukkit-%s.jar.conf" % version)
-spigot_template = ''
-for filename in os.listdir("downloads/jars/spigot"):
-    data = filename.split("-")
-    type = data[0]
-    version = data[1].replace(".jar", "")
-    with open('spigot.template', 'r') as file:
-        spigot_template = file.read()
-        spigot_template = spigot_template.replace("[VERSION]", version)
-    with open('downloads/confs/spigot/spigot-%s.jar.conf' % version, 'a') as the_file:
-        the_file.write(craftbukkit_template)
-    print("Saved conf file for spigot-%s.jar.conf" % version)
+folders = ['downloads/jar/stable/craftbukkit', 'downloads/jar/stable/spigot', 'downloads/jar/stable/vanilla']
+for path in folders:
+
+    for filename in os.listdir(path):
+        data = filename.split("-")
+        type = data[0]
+        version = data[1].replace(".jar", "")
+        template = ""
+        if type == "craftbukkit":
+            with open('templates/craftbukkit.template', 'r') as file:
+                template = file.read()
+        if type == "spigot":
+            with open('templates/spigot.template', 'r') as file:
+                template = file.read()
+        if type == "spigot":
+            with open('templates/vanilla.template', 'r') as file:
+                template = file.read()
+        template = template.replace("[VERSION]", version)
+        with open('%s/%s-%s.jar.conf' % (path.replace("jar", "conf"), type, version), 'a') as the_file:
+            the_file.write(template)
+        print("Saved conf file for %s-%s.jar.conf" % (type, version))
