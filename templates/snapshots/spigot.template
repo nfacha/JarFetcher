@@ -6,8 +6,8 @@ important=true
 ## format of this file.
 [config]
 name = Spigot SNAPSHOT [VERSION]
-source = http://jar.freemcserver.net/jar/snapshot/spigot/spigot-[VERSION].jar
-configSource = http://jar.freemcserver.net/conf/snapshot/spigot/spigot-[VERSION].jar.conf
+source = http://jar.freemcserver.net/jar/snapshots/spigot/spigot-[VERSION].jar
+configSource = http://jar.freemcserver.net/conf/snapshots/spigot/spigot-[VERSION].jar.conf
 category = Mods
 
 [encoding]

@@ -6,8 +6,8 @@ important=true
 ## format of this file.
 [config]
 name = CraftBukkit SNAPSHOT [VERSION]
-source = http://jar.freemcserver.net/jar/snapshot/craftbukkit/craftbukkit-[VERSION].jar
-configSource = http://jar.freemcserver.net/conf/snapshot/craftbukkit/craftbukkit-[VERSION].jar.conf
+source = http://jar.freemcserver.net/jar/snapshots/craftbukkit/craftbukkit-[VERSION].jar
+configSource = http://jar.freemcserver.net/conf/snapshots/craftbukkit/craftbukkit-[VERSION].jar.conf
 category = Mods
 
 [encoding]

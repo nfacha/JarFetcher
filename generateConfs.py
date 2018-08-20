@@ -1,6 +1,6 @@
 import os
 folders = ['downloads/jar/stable/craftbukkit', 'downloads/jar/stable/spigot', 'downloads/jar/stable/vanilla',
-           'downloads/jar/snapshot/craftbukkit', 'downloads/jar/snapshot/spigot', 'downloads/jar/snapshot/vanilla']
+           'downloads/jar/snapshots/craftbukkit', 'downloads/jar/snapshots/spigot', 'downloads/jar/snapshots/vanilla']
 for path in folders:
 
     for filename in os.listdir(path):
@@ -14,7 +14,7 @@ for path in folders:
             stability = "stable"
             filename = '%s/%s-%s.jar.conf' % (path.replace("jar", "conf"), type, version)
         else:
-            stability = "snapshot"
+            stability = "snapshots"
             filename = '%s/%s-%s-snapshot.jar.conf' % (path.replace("jar", "conf"), type, version)
         if type == "craftbukkit":
             with open('templates/%s/craftbukkit.template' % stability, 'r') as file:
