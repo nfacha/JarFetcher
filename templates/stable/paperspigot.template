@@ -6,8 +6,8 @@ important=true
 ## format of this file.
 [config]
 name = PaperSpigot [VERSION]
-source = http://jar-v2.freemcserver.net/jar/stable/paperspigot/spigot-[VERSION].jar
-configSource = http://jar-v2.freemcserver.net/conf/stable/paperspigot/spigot-[VERSION].jar.conf
+source = http://jar-v2.freemcserver.net/jar/stable/paperspigot/paperspigot-[VERSION].jar
+configSource = http://jar-v2.freemcserver.net/conf/stable/paperspigot/paperspigot-[VERSION].jar.conf
 category = Mods
 
 [encoding]
