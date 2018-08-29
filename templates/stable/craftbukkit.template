@@ -16,4 +16,4 @@ category = Mods
 #fileEncoding = latin-1
 
 [start]
-command = "{JAVA}" -Xmx{MAX_MEMORY}M -Xms{START_MEMORY}M -XX:MaxPermSize=128M -Djline.terminal=jline.UnsupportedTerminal -Dcom.mojang.eula.agree=true -jar "{JAR}" nogui
+command = /bin/nice -n 10 "{JAVA}" -Xmx{MAX_MEMORY}M -Xms{START_MEMORY}M -XX:MaxPermSize=128M -Djline.terminal=jline.UnsupportedTerminal -Dcom.mojang.eula.agree=true -jar "{JAR}" nogui
