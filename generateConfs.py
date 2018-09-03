@@ -27,7 +27,7 @@ for path in folders:
             with open('templates/%s/craftbukkit.template' % stability, 'r') as file:
                 template = file.read()
         if type == "spigot":
-            if version == 'latest' or versiontuple(version) >= versiontuple("1.13"):
+            if version == 'latest' or versiontuple(version) < versiontuple("1.13"):
                 with open('templates/%s/spigot.template' % stability, 'r') as file:
                     template = file.read()
             else:
