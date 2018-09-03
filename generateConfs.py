@@ -1,5 +1,12 @@
 import os
+
+
+def versiontuple(v):
+    return tuple(map(int, (v.split("."))))
+
+
 folders = ['downloads/jar/stable/craftbukkit', 'downloads/jar/stable/spigot', 'downloads/jar/stable/vanilla',
+           'downloads/jar/stable/paperspigot', 'downloads/jar/stable/nukkit',
            'downloads/jar/snapshots/craftbukkit', 'downloads/jar/snapshots/spigot', 'downloads/jar/snapshots/vanilla']
 for path in folders:
 
@@ -20,13 +27,27 @@ for path in folders:
             with open('templates/%s/craftbukkit.template' % stability, 'r') as file:
                 template = file.read()
         if type == "spigot":
-            with open('templates/%s/spigot.template' % stability, 'r') as file:
+            if version == 'latest' or versiontuple(version) < versiontuple("1.13"):
+                with open('templates/%s/spigot.template' % stability, 'r') as file:
+                    template = file.read()
+            else:
+                with open('templates/%s/spigot-force-1.13.template' % stability, 'r') as file:
+                    template = file.read()
+        if type == "paperspigot":
+            with open('templates/%s/paperspigot.template' % stability, 'r') as file:
                 template = file.read()
         if type == "vanilla":
             with open('templates/%s/vanilla.template' % stability, 'r') as file:
                 template = file.read()
         template = template.replace("[VERSION]", version)
 
+        if type == "nukkit":
+            with open('templates/%s/nukkit.template' % stability, 'r') as file:
+                template = file.read()
+        template = template.replace("[VERSION]", version)
+
+        if os.path.exists(filename):
+            os.remove(filename)
         with open(filename, 'a') as the_file:
             the_file.write(template)
         print("Saved conf file for %s-%s.jar.conf" % (type, version))

@@ -6,8 +6,8 @@ important=true
 ## format of this file.
 [config]
 name = Vanilla [VERSION]
-source = http://jar.freemcserver.net/jar/stable/vanilla/spigot-[VERSION].jar
-configSource = http://jar.freemcserver.net/conf/stable/vanilla/spigot-[VERSION].jar.conf
+source = http://jar-v2.freemcserver.net/jar/stable/vanilla/vanilla-[VERSION].jar
+configSource = http://jar-v2.freemcserver.net/conf/stable/vanilla/vanilla-[VERSION].jar.conf
 category = Mods
 
 [encoding]
@@ -16,4 +16,4 @@ category = Mods
 #fileEncoding = latin-1
 
 [start]
-command = "{JAVA}" -Xmx{MAX_MEMORY}M -Xms{START_MEMORY}M -XX:MaxPermSize=128M -Djline.terminal=jline.UnsupportedTerminal -Dcom.mojang.eula.agree=true -jar "{JAR}" nogui
+command = /bin/nice -n 10 "{JAVA}" -Xmx{MAX_MEMORY}M -Xms{START_MEMORY}M -XX:MaxPermSize=128M -Djline.terminal=jline.UnsupportedTerminal -Dcom.mojang.eula.agree=true -jar "{JAR}" nogui

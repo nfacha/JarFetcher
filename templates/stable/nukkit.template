@@ -5,9 +5,9 @@ important=true
 ## See the default craftbukkit.jar.conf for a detailed documentation of the
 ## format of this file.
 [config]
-name = Spigot SNAPSHOT [VERSION]
-source = http://jar-v2.freemcserver.net/jar/snapshots/spigot/spigot-[VERSION]-snapshot.jar
-configSource = http://jar-v2.freemcserver.net/conf/snapshots/spigot/spigot-[VERSION]-snapshot.jar.conf
+name = Nukkit [VERSION]
+source = http://jar-v2.freemcserver.net/jar/stable/nukkit/nukkit-[VERSION].jar
+configSource = http://jar-v2.freemcserver.net/conf/stable/nukkit/nukkit-[VERSION].jar.conf
 category = Mods
 
 [encoding]
