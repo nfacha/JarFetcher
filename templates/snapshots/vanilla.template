@@ -6,8 +6,8 @@ important=true
 ## format of this file.
 [config]
 name = Vanilla SNAPSHOT [VERSION]
-source = http://jar-v2.freemcserver.net/jar/snapshots/vanilla/spigot-[VERSION]-snapshot.jar
-configSource = http://jar-v2.freemcserver.net/conf/snapshots/vanilla/spigot-[VERSION]-snapshot.jar.conf
+source = http://jar-v2.freemcserver.net/jar/snapshots/vanilla/vanilla-[VERSION]-snapshot.jar
+configSource = http://jar-v2.freemcserver.net/conf/snapshots/vanilla/vanilla-[VERSION]-snapshot.jar.conf
 category = Mods
 
 [encoding]
