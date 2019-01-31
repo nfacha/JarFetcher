@@ -18,8 +18,11 @@ for filename in os.listdir("downloads/dist"):
         insert = insert + "INSERT IGNORE INTO `jars` (`id`, `name`, `id_type`, `internal_name`, `version`, `description`, `active`, `default`) VALUES (NULL, 'Spigot', 1, 'spigot-%s%s.jar', '%s', '.', '0', '0');\n" % (
         version, stabilityLabel, version)
     if type == "vanilla":
-        insert = insert + "INSERT IGNORE INTO `jars` (`id`, `name`, `id_type`, `internal_name`, `version`, `description`, `active`, `default`) VALUES (NULL, 'Vanilla', 2, 'vanilla-%s%s.jar', '%s', '.', '0', '0');\n" % (
-        version, stabilityLabel, version)
+        c = 2
+        if stability == 'snapshot':
+            c = 10
+        insert = insert + "INSERT IGNORE INTO `jars` (`id`, `name`, `id_type`, `internal_name`, `version`, `description`, `active`, `default`) VALUES (NULL, 'Vanilla', %s, 'vanilla-%s%s.jar', '%s', '.', '0', '0');\n" % (
+        c, version, stabilityLabel, version)
     if type == "paperspigot":
         insert = insert + "INSERT IGNORE INTO `jars` (`id`, `name`, `id_type`, `internal_name`, `version`, `description`, `active`, `default`) VALUES (NULL, 'PaperSpigot', 4, 'paperspigot-%s%s.jar', '%s', '.', '0', '0');\n" % (
         version, stabilityLabel, version)
