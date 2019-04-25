@@ -11,24 +11,21 @@ for filename in os.listdir("downloads/dist"):
     if "snapshot" in filename:
         stability = "snapshot"
         stabilityLabel = "-snapshot"
-    if type == "craftbukkit":
-        insert = insert + "INSERT IGNORE INTO `jars` (`id`, `name`, `id_type`, `internal_name`, `version`, `description`, `active`, `default`) VALUES (NULL, 'CraftBukkit', 3, 'craftbukkit-%s%s.jar', '%s', '.', '0', '0');\n" % (
-        version, stabilityLabel, version)
     if type == "spigot":
-        insert = insert + "INSERT IGNORE INTO `jars` (`id`, `name`, `id_type`, `internal_name`, `version`, `description`, `active`, `default`) VALUES (NULL, 'Spigot', 1, 'spigot-%s%s.jar', '%s', '.', '0', '0');\n" % (
+        insert = insert + "INSERT IGNORE INTO `jars` (`id`, `id_type`, `internal_name`, `version`, `description`, `active`, `default`) VALUES (NULL, 1, 'spigot-%s%s.jar', '%s', '.', '0', '0');\n" % (
         version, stabilityLabel, version)
     if type == "vanilla":
         c = 2
         if stability == 'snapshot':
             c = 10
-        insert = insert + "INSERT IGNORE INTO `jars` (`id`, `name`, `id_type`, `internal_name`, `version`, `description`, `active`, `default`) VALUES (NULL, 'Vanilla', %s, 'vanilla-%s%s.jar', '%s', '.', '0', '0');\n" % (
+        insert = insert + "INSERT IGNORE INTO `jars` (`id`, `id_type`, `internal_name`, `version`, `description`, `active`, `default`) VALUES (NULL, %s, 'vanilla-%s%s.jar', '%s', '.', '0', '0');\n" % (
         c, version, stabilityLabel, version)
     if type == "paperspigot":
-        insert = insert + "INSERT IGNORE INTO `jars` (`id`, `name`, `id_type`, `internal_name`, `version`, `description`, `active`, `default`) VALUES (NULL, 'PaperSpigot', 4, 'paperspigot-%s%s.jar', '%s', '.', '0', '0');\n" % (
+        insert = insert + "INSERT IGNORE INTO `jars` (`id`, `id_type`, `internal_name`, `version`, `description`, `active`, `default`) VALUES (NULL, 4, 'paperspigot-%s%s.jar', '%s', '.', '0', '0');\n" % (
         version, stabilityLabel, version)
 
     if type == "nukkit":
-        insert = insert + "INSERT IGNORE INTO `jars` (`id`, `name`, `id_type`, `internal_name`, `version`, `description`, `active`, `default`) VALUES (NULL, 'Nukkit', 5, 'nukkit-%s%s.jar', '%s', '.', '0', '0');\n" % (
+        insert = insert + "INSERT IGNORE INTO `jars` (`id`, `id_type`, `internal_name`, `version`, `description`, `active`, `default`) VALUES (NULL, 5, 'nukkit-%s%s.jar', '%s', '.', '0', '0');\n" % (
         version, stabilityLabel, version)
 
 if os.path.exists('import.sql'):

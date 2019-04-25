@@ -5,9 +5,9 @@ def versiontuple(v):
     return tuple(map(int, (v.split("."))))
 
 
-folders = ['downloads/jar/stable/craftbukkit', 'downloads/jar/stable/spigot', 'downloads/jar/stable/vanilla',
+folders = ['downloads/jar/stable/spigot', 'downloads/jar/stable/vanilla',
            'downloads/jar/stable/paperspigot', 'downloads/jar/stable/nukkit',
-           'downloads/jar/snapshots/craftbukkit', 'downloads/jar/snapshots/spigot', 'downloads/jar/snapshots/vanilla']
+           'downloads/jar/snapshots/spigot', 'downloads/jar/snapshots/vanilla']
 for path in folders:
 
     for filename in os.listdir(path):
@@ -23,9 +23,6 @@ for path in folders:
         else:
             stability = "snapshots"
             filename = '%s/%s-%s-snapshot.jar.conf' % (path.replace("jar", "conf"), type, version)
-        if type == "craftbukkit":
-            with open('templates/%s/craftbukkit.template' % stability, 'r') as file:
-                template = file.read()
         if type == "spigot":
             if version == 'latest' or versiontuple(version) < versiontuple("1.13"):
                 with open('templates/%s/spigot.template' % stability, 'r') as file:
