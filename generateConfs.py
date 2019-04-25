@@ -11,6 +11,8 @@ folders = ['downloads/jar/stable/spigot', 'downloads/jar/stable/vanilla',
 for path in folders:
 
     for filename in os.listdir(path):
+        if not filename.endswith(".jar"):
+            continue
         print("Generating conf for %s" % filename)
         data = filename.split("-")
         type = data[0]
