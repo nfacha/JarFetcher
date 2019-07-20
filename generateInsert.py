@@ -7,13 +7,16 @@ for filename in os.listdir("downloads/dist"):
     type = data[0]
     version = data[1].replace(".jar", "")
     stability = "stable"
-    stabilityLabel = "";
+    stabilityLabel = ""
     if "snapshot" in filename:
         stability = "snapshot"
         stabilityLabel = "-snapshot"
     if type == "spigot":
-        insert = insert + "INSERT IGNORE INTO `jars` (`id`, `id_type`, `internal_name`, `version`,  `active`, `default`) VALUES (NULL, 1, 'spigot-%s%s.jar', '%s',  '0', '0');\n" % (
-        version, stabilityLabel, version)
+        c = 1
+        if stability == 'snapshot':
+            c = 7
+        insert = insert + "INSERT IGNORE INTO `jars` (`id`, `id_type`, `internal_name`, `version`,  `active`, `default`) VALUES (NULL, %s, 'spigot-%s%s.jar', '%s',  '0', '0');\n" % (
+            c, version, stabilityLabel, version)
     if type == "vanilla":
         c = 2
         if stability == 'snapshot':
