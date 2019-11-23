@@ -7,7 +7,7 @@ important=true
 [config]
 name = [TYPE] [VERSION]
 source = https://jar.freemcserver.net/jar/stable/[TYPE]/[TYPE]-[VERSION].jar
-configSource = https://jar.freemcserver.net/jar/stable/[TYPE]/[TYPE]-[VERSION].jar.conf
+configSource = https://jar.freemcserver.net/conf/stable/[TYPE]/[TYPE]-[VERSION].jar.conf
 category = Mods
 
 [encoding]

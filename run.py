@@ -2,6 +2,7 @@ import concurrent.futures
 import os
 
 import Storage
+import conf_generator
 import downloader
 
 all_links = {
@@ -108,3 +109,5 @@ for stage in os.listdir('jar'):
             if jar_name.startswith('.') or os.path.isdir(f'jar/{stage}/{jar_type}/{jar_name}'):
                 continue
             Storage.logger.info(f'Generating configs for {jar_name}')
+            jar_version = jar_name.split('-')[1].replace('.jar', '')
+            conf_generator.generate(jar_type, jar_version, stage)
