@@ -1,4 +1,4 @@
-links = []
+links = {}
 
 def get():
     import selenium.webdriver as webdriver
