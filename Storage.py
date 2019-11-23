@@ -1,9 +1,7 @@
 import logging
-import os
 from logging import Logger
 
 logger: Logger
-
 
 
 def init_logger():

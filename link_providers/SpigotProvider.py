@@ -20,7 +20,7 @@ def get():
             continue
 
         driver_download.get(version_link)
-        version_link_real = driver_download.find_element_by_class_name("well").find_element_by_tag_name("a")\
+        version_link_real = driver_download.find_element_by_class_name("well").find_element_by_tag_name("a") \
             .get_attribute('href')
         target_file_name = "spigot-%s.jar" % version_name
         Storage.logger.info(f'Found download link for Spigot {version} with {version_size}: {version_link_real}')
