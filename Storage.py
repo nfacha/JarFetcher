@@ -1,0 +1,16 @@
+import logging
+import os
+from logging import Logger
+
+logger: Logger
+
+def init_logger():
+    global logger
+    logger = logging.getLogger('JarFetcher')
+    ch = logging.StreamHandler()
+    logger.setLevel(logging.DEBUG)
+    ch.setLevel(logging.DEBUG)
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    ch.setFormatter(formatter)
+    logger.addHandler(ch)
+    logger.info('Logger ready!')
