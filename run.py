@@ -1,4 +1,5 @@
 import concurrent.futures
+import os
 
 import Storage
 import downloader
@@ -99,3 +100,11 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
             jar_version = jar_name.split('-')[1].replace('.jar', '')
             Storage.logger.debug(f'{jar_name} ({jar_version}): {jar_link}')
             results.append(executor.submit(downloader.download, jar_type, jar_version, jar_link))
+Storage.logger.info('Generating configs')
+for stage in os.listdir('jar'):
+    for jar_type in os.listdir(f'jar/{stage}'):
+        Storage.logger.info(f'Generating configs for {stage} -> {jar_type}')
+        for jar_name in os.listdir(f'jar/{stage}/{jar_type}'):
+            if jar_name.startswith('.') or os.path.isdir(f'jar/{stage}/{jar_type}/{jar_name}'):
+                continue
+            Storage.logger.info(f'Generating configs for {jar_name}')
