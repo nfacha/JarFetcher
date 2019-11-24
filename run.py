@@ -55,7 +55,7 @@ for stage in os.listdir('jar'):
         for jar_name in os.listdir(f'jar/{stage}/{jar_type}'):
             if jar_name.startswith('.') or os.path.isdir(f'jar/{stage}/{jar_type}/{jar_name}'):
                 continue
-            all_paths.append(f'jar/{stage}/{jar_type}/{jar_name}')
+            # all_paths.append(f'jar/{stage}/{jar_type}/{jar_name}')
             all_paths.append(f'conf/{stage}/{jar_type}/{jar_name}.conf')
             Storage.logger.info(f'Generating configs for {jar_name}')
             jar_version = jar_name.split('-')[1].replace('.jar', '')
