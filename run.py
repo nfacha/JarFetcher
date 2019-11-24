@@ -59,6 +59,7 @@ for stage in os.listdir('jar'):
             Storage.logger.info(f'Generating configs for {jar_name}')
             jar_version = jar_name.split('-')[1].replace('.jar', '')
             import_command += import_generator.generate(jar_type, jar_version, stage)
+all_paths.append(f'conf/stable/custom/custom.jar.conf')
 if os.path.exists('import.sql'):
     os.remove('import.sql')
 
