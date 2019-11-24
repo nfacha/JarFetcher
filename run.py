@@ -52,7 +52,7 @@ import_command = ''
 for stage in os.listdir('jar'):
     for jar_type in os.listdir(f'jar/{stage}'):
         Storage.logger.info(f'Generating configs for {stage} -> {jar_type}')
-        import_command += f'# ------- START {stage} {jar_type} -------'
+        import_command += f'# ------- START {stage} {jar_type} -------\n'
         for jar_name in os.listdir(f'jar/{stage}/{jar_type}'):
             if jar_name.startswith('.') or os.path.isdir(f'jar/{stage}/{jar_type}/{jar_name}'):
                 continue
@@ -61,7 +61,7 @@ for stage in os.listdir('jar'):
             Storage.logger.info(f'Generating configs for {jar_name}')
             jar_version = jar_name.split('-')[1].replace('.jar', '')
             import_command += import_generator.generate(jar_type, jar_version, stage)
-        import_command += f'# ------- FINISH {stage} {jar_type} -------'
+        import_command += f'# ------- FINISH {stage} {jar_type} -------\n'
 shutil.copy('conf-template/stable/custom/custom.template', 'conf/stable/custom/custom.jar.conf')
 all_paths.append('conf/stable/custom/custom.jar.conf')
 if os.path.exists('import.sql'):
