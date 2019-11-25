@@ -44,7 +44,7 @@ for stage in os.listdir('jar'):
             if jar_name.startswith('.') or os.path.isdir(f'jar/{stage}/{jar_type}/{jar_name}'):
                 continue
             Storage.logger.info(f'Generating configs for {jar_name}')
-            jar_version = jar_name.split('-')[1].replace('.jar', '')
+            jar_version = jar_name.split('-')[1].replace('.jar', '').replace('-snapshot', '')
             conf_generator.generate(jar_type, jar_version, stage)
 
 Storage.logger.info('Generating import')
@@ -70,8 +70,6 @@ if os.path.exists('import.sql'):
 with open(f'import.sql', 'a') as output_file:
     output_file.write(import_command)
     Storage.logger.info('Saved import.sql file')
-
-print(all_paths)
 
 if os.path.exists('zip/dist.zip'):
     os.remove('zip/dist.zip')
