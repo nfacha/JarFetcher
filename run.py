@@ -7,35 +7,47 @@ import Storage
 import conf_generator
 import downloader
 import import_generator
-from link_providers import CraftBukkitProvider, SpigotProvider, VanillaProvider
+from link_providers import VanillaSnapshotProvider
 
 all_links = {
-    'craftbukkit': {},
+    'stable': {
+        'craftbukkit': {},
     'nukkit': {},
     'paper': {},
     'spigot': {},
     'vanila': {},
+    },
+    'snapshot': {
+        'craftbukkit': {},
+        'nukkit': {},
+        'paper': {},
+        'spigot': {},
+        'vanila': {},
+    },
+
 }
 
 Storage.init_logger()
 Storage.logger.info('JarFetcher starting')
 Storage.logger.info('Getting CraftBukkit links')
 # Using hardcoded values for easier dev
-all_links['craftbukkit'].update(CraftBukkitProvider.get())
-all_links['spigot'].update(SpigotProvider.get())
-all_links['vanila'].update(VanillaProvider.get())
+# all_links['stable']['craftbukkit'].update(CraftBukkitProvider.get())
+# all_links['stable']['spigot'].update(SpigotProvider.get())
+# all_links['stable']['vanila'].update(VanillaProvider.get())
+all_links['snapshot']['vanila'].update(VanillaSnapshotProvider.get())
 all_paths = []
 
 Storage.logger.debug(all_links)
 with concurrent.futures.ThreadPoolExecutor() as executor:
     results = []
-    for jar_type in all_links:
-        Storage.logger.info(f'Downloading {jar_type} jars')
-        for jar_name in all_links[jar_type]:
-            jar_link = all_links[jar_type][jar_name]
-            jar_version = jar_name.split('-')[1].replace('.jar', '')
-            Storage.logger.debug(f'{jar_name} ({jar_version}): {jar_link}')
-            results.append(executor.submit(downloader.download, jar_type, jar_version, jar_link))
+    for stage in all_links:
+        for jar_type in all_links[stage]:
+            Storage.logger.info(f'Downloading {jar_type} jars')
+            for jar_name in all_links[stage][jar_type]:
+                jar_link = all_links[stage][jar_type][jar_name]
+                jar_version = jar_name.split('-')[1].replace('.jar', '')
+                Storage.logger.debug(f'{jar_name} ({jar_version}): {jar_link}')
+                results.append(executor.submit(downloader.download, jar_type, jar_version, jar_link, stage))
 Storage.logger.info('Generating configs')
 for stage in os.listdir('jar'):
     for jar_type in os.listdir(f'jar/{stage}'):

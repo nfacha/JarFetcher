@@ -3,7 +3,6 @@ from logging import Logger
 
 logger: Logger
 
-
 def init_logger():
     global logger
     logger = logging.getLogger('JarFetcher')
