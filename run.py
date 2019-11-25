@@ -7,7 +7,7 @@ import Storage
 import conf_generator
 import downloader
 import import_generator
-from link_providers import VanillaSnapshotProvider
+from link_providers import VanillaSnapshotProvider, CraftBukkitProvider, SpigotProvider, VanillaProvider
 
 all_links = {
     'stable': {
