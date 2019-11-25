@@ -31,9 +31,9 @@ Storage.init_logger()
 Storage.logger.info('JarFetcher starting')
 Storage.logger.info('Getting CraftBukkit links')
 # Using hardcoded values for easier dev
-# all_links['stable']['craftbukkit'].update(CraftBukkitProvider.get())
-# all_links['stable']['spigot'].update(SpigotProvider.get())
-# all_links['stable']['vanila'].update(VanillaProvider.get())
+all_links['stable']['craftbukkit'].update(CraftBukkitProvider.get())
+all_links['stable']['spigot'].update(SpigotProvider.get())
+all_links['stable']['vanila'].update(VanillaProvider.get())
 all_links['snapshot']['vanila'].update(VanillaSnapshotProvider.get())
 all_paths = []
 
