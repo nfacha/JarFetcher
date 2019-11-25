@@ -79,6 +79,15 @@ all_paths.append('conf/stable/custom/custom.jar.conf')
 if os.path.exists('import.sql'):
     os.remove('import.sql')
 
+if os.path.exists('install.txt'):
+    os.remove('install.txt')
+
+with open(f'install.txt', 'a') as output_file:
+    for link in Storage.new_installs:
+        output_file.write(f'{link} \n')
+    Storage.logger.info('Saved install file')
+
+
 with open(f'import.sql', 'a') as output_file:
     output_file.write(import_command)
     Storage.logger.info('Saved import.sql file')
