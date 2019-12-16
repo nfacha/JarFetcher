@@ -17,12 +17,15 @@ def get():
         version_name = version.find_element_by_class_name("version").text
         version_name = str(version_name).replace('-', '_')
         version_date = datetime.strptime(version.find_element_by_class_name("time").text, '%m/%d/%y')
-        version_link = version.find_element_by_class_name("server").get_attribute('href')
-        import Storage
-        if version_date < date_limit:
-            continue
+        try:
+            version_link = version.find_element_by_class_name("server").get_attribute('href')
+            import Storage
+            if version_date < date_limit:
+                continue
 
-        target_file_name = "vanila-%s-snapshot.jar" % version_name
-        Storage.logger.info(f'Found download link for Vanilla Snapshot {version_name}: {version_link}')
-        links[target_file_name] = version_link
+            target_file_name = "vanila-%s-snapshot.jar" % version_name
+            Storage.logger.info(f'Found download link for Vanilla Snapshot {version_name}: {version_link}')
+            links[target_file_name] = version_link
+        except:
+            pass
     return links
