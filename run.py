@@ -7,7 +7,7 @@ import Storage
 import conf_generator
 import downloader
 import import_generator
-from link_providers import VanillaSnapshotProvider, CraftBukkitProvider, SpigotProvider, VanillaProvider
+from link_providers import CraftBukkitProvider, SpigotProvider, VanillaProvider
 
 all_links = {
     'stable': {
@@ -34,7 +34,7 @@ Storage.logger.info('Getting CraftBukkit links')
 all_links['stable']['craftbukkit'].update(CraftBukkitProvider.get())
 all_links['stable']['spigot'].update(SpigotProvider.get())
 all_links['stable']['vanila'].update(VanillaProvider.get())
-all_links['snapshot']['vanila'].update(VanillaSnapshotProvider.get())
+# all_links['snapshot']['vanila'].update(VanillaSnapshotProvider.get())
 all_paths = []
 
 Storage.logger.debug(all_links)
