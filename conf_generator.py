@@ -18,8 +18,7 @@ def generate(type: str, version: str, stage: str):
             Storage.logger.info(f'Config conf/{stage}/{type}/{type}-{version}{stage_label}.jar.conf exists, will '
                                 f're-create')
             os.remove(f'conf/{stage}/{type}/{type}-{version}{stage_label}.jar.conf')
-            Storage.logger.debug(f'caralho {stage}')
-            Storage.logger.debug(f'caralho {stage_label}')
+
         with open(f'conf/{stage}/{type}/{type}-{version}{stage_label}.jar.conf', 'a') as output_file:
             output_file.write(template)
             Storage.logger.info(f'Config conf/{stage}/{type}/{type}-{version}{stage_label}.jar.conf generated')

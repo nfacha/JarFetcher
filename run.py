@@ -50,6 +50,8 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
                 results.append(executor.submit(downloader.download, jar_type, jar_version, jar_link, stage))
 Storage.logger.info('Generating configs')
 for stage in os.listdir('jar'):
+    if stage is 'plugins':
+        continue
     for jar_type in os.listdir(f'jar/{stage}'):
         Storage.logger.info(f'Generating configs for {stage} -> {jar_type}')
         for jar_name in os.listdir(f'jar/{stage}/{jar_type}'):
