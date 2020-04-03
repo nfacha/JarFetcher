@@ -64,6 +64,8 @@ for stage in os.listdir('jar'):
 Storage.logger.info('Generating import')
 import_command = ''
 for stage in os.listdir('jar'):
+    if stage.startswith('plugins'):
+        continue
     for jar_type in os.listdir(f'jar/{stage}'):
         Storage.logger.info(f'Generating configs for {stage} -> {jar_type}')
         import_command += f'# ------- START {stage} {jar_type} -------\n'
