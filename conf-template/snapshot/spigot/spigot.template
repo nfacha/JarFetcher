@@ -1,0 +1,57 @@
+[parse_startup]
+start=\s*Done
+important=true
+
+## See the default craftbukkit.jar.conf for a detailed documentation of the
+## format of this file.
+[config]
+name = [TYPE] [VERSION]
+source = http://jar.freemcserver.net/jar/stable/[TYPE]/[TYPE]-[VERSION].jar
+configSource = http://jar.freemcserver.net/conf/stable/[TYPE]/[TYPE]-[VERSION].jar.conf
+category = Mods
+
+[encoding]
+#encode = system
+#decode = system
+#fileEncoding = latin-1
+
+[start]
+command = /bin/nice -n 10 "{JAVA}" -Xmx{MAX_MEMORY}M -Xms{START_MEMORY}M -Djline.terminal=jline.UnsupportedTerminal -Dcom.mojang.eula.agree=true -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringroot@vmi319112:~/FreeMCServersYii2/jar-fetcher# cat conf-template/stable/spigot/spigot.template 
+[parse_startup]
+start=\s*Done
+important=true
+
+## See the default craftbukkit.jar.conf for a detailed documentation of the
+## format of this file.
+[config]
+name = [TYPE] [VERSION]
+source = http://jar.freemcserver.net/jar/stable/[TYPE]/[TYPE]-[VERSION].jar
+configSource = http://jar.freemcserver.net/conf/stable/[TYPE]/[TYPE]-[VERSION].jar.conf
+category = Mods
+
+[encoding]
+#encode = system
+#decode = system
+#fileEncoding = latin-1
+
+[start]
+command = /bin/nice -n 10 "{JAVA}" -Xmx{MAX_MEMORY}M -Xms{START_MEMORY}M -Djline.terminal=jline.UnsupportedTerminal -Dcom.mojang.eula.agree=true -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -DIReallyroot@vmi319112:~/FreeMCServersYii2/jar-fetcher# cat conf-template/snapshot/spigot/spigot.template 
+[parse_startup]
+start=\s*Done
+important=true
+
+## See the default craftbukkit.jar.conf for a detailed documentation of the
+## format of this file.
+[config]
+name = [TYPE] [VERSION] SNAPSHOT
+source = http://jar.freemcserver.net/jar/snapshot/[TYPE]/[TYPE]-[VERSION]-snapshot.jar
+configSource = http://jar.freemcserver.net/conf/snapshot/[TYPE]/[TYPE]-[VERSION]-snapshot.jar.conf
+category = Mods
+
+[encoding]
+#encode = system
+#decode = system
+#fileEncoding = latin-1
+
+[start]
+command = /bin/nice -n 10 "{JAVA}" -Xmx{MAX_MEMORY}M -Xms{START_MEMORY}M -Djline.terminal=jline.UnsupportedTerminal -Dcom.mojang.eula.agree=true -jar "{JAR}" nogui
